@@ -1,0 +1,12 @@
+{
+    {
+        "cmake.cmakePath": "/usr/local/bin/cmake",
+        "cmake.generator": "Unix Makefiles",
+        "cmake.configureOnOpen": true,
+        "C_Cpp.default.compilerPath": "/opt/rh/devtoolset-7/root/usr/bin/g++",
+        "terminal.integrated.env.linux": {
+            "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/home/liyan/bin:/opt/rh/devtoolset-7/root/usr/bin"
+        }
+    }
+    
+}

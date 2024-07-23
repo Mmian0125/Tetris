@@ -1,0 +1,21 @@
+ANSI escape code:控制终端上格式的标准
+参考：https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797
+1.由前缀Esc开头：
+  Ctrl-Key: ^[
+  Octal: \033
+  Unicode: \u001b
+  Hexadecimal: \x1B
+  Decimal: 27
+Esc后跟命令，由[作为分隔符，参数由;作为分隔符。
+例：\x1b[1;31m  设置字符为粗体红色字体
+（linux终端中输入要添加转移字符：\\x1b[1\;31m）
+2.光标移动：Esc[{line};{column}H
+例：\033[5;10Hhello  光标移动到第5行第10列
+3.清屏：Esc[2J
+4.颜色和字符格式
+  Esc[0m  清除所有格式
+  8色：Ecs[30-37或40-47m 颜色从31到37为前景色，40-47为背景色
+  256色：Esc[38;5;{ID}m  前景色，id为0-255
+        Esc[48;5;{ID}m  背景色，id为0-255
+5.隐藏光标；Esc[?25l  
+  显示光标：Esc[?25h
