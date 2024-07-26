@@ -6,6 +6,7 @@
 #include<thread>
 #include<map>
 #include<functional>
+#include<vector>
 
 #include<termios.h>
 

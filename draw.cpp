@@ -1,6 +1,8 @@
 #include "draw.h"
 #include "terminal.h"
 #include "utils.h"
+#include "define.h"
+#include "tetromino.h"
 /*     unicode box
  	0	1	2	3	4	5	6	7	8	9	A	B	C	D	E	F
 U+250x	─	━	│	┃	┄	┅	┆	┇	┈	┉	┊	┋	┌	┍	┎	┏
@@ -43,13 +45,28 @@ namespace dw{
                     }else{
                         std::cout<<"  ";
                     }
-                        
-
                 }
             }
         }
         tc::move_to(top,ut::b2c(left)+(width*2-title.length())/2);  //title
         std::cout<<title;
-    }
+    };
+
+    void tetromino(gm::Tetromino& t,int top,int left){
+        tc::move_to(top,ut::b2c(left));
+        for(int i=0;i<t.size();++i){
+            tc::move_to(top+i,ut::b2c(left));
+            for(int j=0;j<t.size();++j){
+                if(t[i][j]>0){
+                    tc::set_back_color((int)gm::tetro_color[t[i][j]]);  //置为白色
+                    std::cout<<"  ";
+                }else{
+                    tc::reset();
+                    std::cout<<"  ";
+                }
+                    
+            }
+        }
+    };
 }
 

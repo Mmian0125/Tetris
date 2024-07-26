@@ -28,10 +28,8 @@ void loop(){
         std::cout<<"fps:"<<ut::fps();
 
         tc::move_to(gm::row,ut::b2c(gm::col));
-        tc::set_back_color(15);  //置为白色
-        std::cout<<"  ";
+        dw::tetromino(gm::cur,gm::row,gm::col);
         tc::reset();
-
         std::cout<<std::flush;
         std::this_thread::sleep_for(100ms);
     }
